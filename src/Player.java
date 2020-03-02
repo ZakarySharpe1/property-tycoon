@@ -33,7 +33,6 @@ public class Player implements PlayerInterface {
         if(getOfJailCards > 0){
             getOfJailCards--;
             return true;
-
         }
         else{
             return false;
