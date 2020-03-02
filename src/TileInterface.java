@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-interface Tile {
+interface TileInterface {
     boolean getBuyable(); // returns tileBuyable
     void setBuyable(boolean YesOrNo); // sets tileBuyable to true or false
     ArrayList<Player> getPlayers(); // returns list of players currently on tile
