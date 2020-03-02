@@ -34,6 +34,7 @@ public class Player implements PlayerInterface {
             getOfJailCards--;
             return true;
         }
+
         else{
             return false;
         }
