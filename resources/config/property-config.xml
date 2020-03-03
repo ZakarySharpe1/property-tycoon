@@ -1,7 +1,31 @@
 <?xml version="1.0"?>
 <config>
     <tile>
-        <name>hi</name>
+        <name>prop</name>
+        <type>property</type>
+        <cost>100</cost>
+        <rent>100</rent>
+        <one-house>100</one-house>
+        <two-house>100</two-house>
+        <three-house>100</three-house>
+        <four-house>100</four-house>
+        <hotel>100</hotel>
+        <colour>blue</colour>
+    </tile>
+    <tile>
+        <name>prop</name>
+        <type>go</type>
+        <cost>100</cost>
+        <rent>100</rent>
+        <one-house>100</one-house>
+        <two-house>100</two-house>
+        <three-house>100</three-house>
+        <four-house>100</four-house>
+        <hotel>100</hotel>
+        <colour>blue</colour>
+    </tile>
+    <tile>
+        <name>prop</name>
         <type>property</type>
         <cost>100</cost>
         <rent>100</rent>

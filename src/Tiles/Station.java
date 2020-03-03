@@ -1,4 +1,4 @@
 package Tiles;
 
-public class Station {
+public class Station extends Tile {
 }

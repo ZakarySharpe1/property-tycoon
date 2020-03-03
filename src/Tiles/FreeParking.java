@@ -1,4 +1,4 @@
 package Tiles;
 
-public class FreeParking {
+public class FreeParking extends Tile {
 }

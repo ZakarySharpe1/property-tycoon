@@ -1,92 +1,112 @@
 package main;
 
+import Tiles.*;
 import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ConfigReader {
 
-    private ArrayList<Map> tileList;
+    private Tile[] tileList;
+    private ArrayList<Tile> cardList;
 
-    public ArrayList<Map> ConfigReader() {
 
 
-        tileList = new ArrayList<>();
+
+    public Tile[] ConfigReader() {
+
+
+        tileList = new Tile[40];
+
         try {
 
-            File file = new File("resources/config/property-property-config.xml");
+            File file = new File("resources/config/property-config.xml");
 
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
             Document document = docBuilder.parse(file);
             document.getDocumentElement().normalize();
 
-            NodeList nodeList = document.getElementsByTagName("tile");
+            NodeList tileNodeList = document.getElementsByTagName("tile");
+            // NodeList cardNodeList = document.getElementsByTagName("card");
 
 
-            for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            for (int i = 0; i < 3; i++) {
 
-                Node nNode = nodeList.item(temp);
+                Node aNode = tileNodeList.item(i);
 
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element tileElement = (Element) aNode;
+                    Tile tile = new Tile();
 
-                    Map<String, String> dictionary = new HashMap<>();
-
-                    Element eElement = (Element) nNode;
-
-                    ArrayList<String> elements = new ArrayList<>();
 
                     try {
-                        switch (eElement.getElementsByTagName("type").item(0).getTextContent()) {
+                        switch (tileElement.getElementsByTagName("type").item(0).getTextContent()) {
 
                             case "property":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "one-house", "two-house", "three-house", "four-house", "hotel", "colour"));
+
+                                List<String> houses = Arrays.asList("one-house", "two-house", "three-house", "four-house", "hotel");
+
+                                tile = new Property();
+                                tile.setBuyable(true);
+
+                                ((Property) tile).setColour(tileElement.getElementsByTagName("colour").item(0).getTextContent());
+
+                                for (String house : houses) {
+
+                                    ((Property) tile).addHousePrice(Integer.parseInt(tileElement.getElementsByTagName(house).item(0).getTextContent()));
+                                }
                                 break;
+
                             case "go":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "one-house", "two-house", "three-house", "four-house", "hotel", "colour"));
+
+                                tile = new Go();
+
                                 break;
                             case "jail":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "two-house", "three-house", "four-house", "hotel", "colour"));
+
+                                tile = new Jail();
                                 break;
                             case "tax":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "two-house", "three-house", "four-house", "hotel", "colour"));
+
+                                tile = new Tax();
                                 break;
-                            case "chest":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "two-house", "three-house", "four-house", "hotel", "colour"));
+                            case "communitychest":
+
+                                tile = new CommunityChest();
                                 break;
                             case "station":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "two-house", "three-house", "four-house", "hotel", "colour"));
+
+                                tile = new Station();
                                 break;
                             case "parking":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "two-house", "three-house", "four-house", "hotel", "colour"));
+
+                                tile = new FreeParking();
                                 break;
                             case "gotojail":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "two-house", "three-house", "four-house", "hotel", "colour"));
+
+                                tile = new GoToJail();
+
                                 break;
-                            case "random":
-                                elements.addAll(Arrays.asList("name", "type", "cost", "two-house", "three-house", "four-house", "hotel", "colour"));
+                            case "potluck":
+
+                                tile = new PotLuck();
                                 break;
 
                         }
+                        tile.setTileName(tileElement.getElementsByTagName("name").item(0).getTextContent());
+                        tile.setTilePos(i);
 
-                        for (String ele : elements) {
-                            dictionary.put(ele, eElement.getElementsByTagName(ele).item(0).getTextContent());
-                        }
+                        tileList[i] = tile;
 
                     } catch (Exception e) {
 
                         System.out.println("error in config file setup");
 
                     }
-
-
-                    tileList.add(dictionary);
 
                 }
             }
