@@ -18,7 +18,7 @@ public class GameBoard{
         ConfigReader builder = new ConfigReader();
         ArrayList<Map> tileList = builder.ConfigReader();
 
-        for(int i = 0; i < tileList.size();i++){
+        for(int i = 0; i < 40;i++){
 
 
             Tile tile = new Tile();
