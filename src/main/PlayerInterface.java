@@ -1,3 +1,5 @@
+package main;
+import Tiles.*;
 import java.util.ArrayList;
 
 public interface PlayerInterface {
