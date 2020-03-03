@@ -1,3 +1,8 @@
+package main;
+
+import Tiles.Tile;
+import main.ConfigReader;
+
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -13,7 +18,7 @@ public class GameBoard{
         ConfigReader builder = new ConfigReader();
         ArrayList<Map> tileList = builder.ConfigReader();
 
-        for(int i = 0; i < tileList.size();i++){
+        for(int i = 0; i < 1;i++){
 
 
             Tile tile = new Tile();

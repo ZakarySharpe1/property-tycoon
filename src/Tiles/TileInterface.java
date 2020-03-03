@@ -1,3 +1,6 @@
+package Tiles;
+import main.Player;
+
 import java.util.ArrayList;
 
 interface TileInterface {
@@ -9,5 +12,5 @@ interface TileInterface {
     String getTileName(); // returns tileName
     void setTileName(String name); // sets tileName to name
     int getTilePos(); // returns tilePosition
-    void setTilePos(int position); // Sets tilePosition variable to position of tile in GameBoard
+    void setTilePos(int position); // Sets tilePosition variable to position of tile in main.GameBoard
 }

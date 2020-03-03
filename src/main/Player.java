@@ -1,3 +1,7 @@
+package main;
+
+import Tiles.Tile;
+
 import java.util.ArrayList;
 
 public class Player implements PlayerInterface {
