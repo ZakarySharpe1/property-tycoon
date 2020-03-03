@@ -97,7 +97,6 @@ public class ConfigReader {
                                 break;
 
                         }
-                        System.out.println("hello");
                         tile.setTileName(tileElement.getElementsByTagName("name").item(0).getTextContent());
                         tile.setTilePos(i);
 
