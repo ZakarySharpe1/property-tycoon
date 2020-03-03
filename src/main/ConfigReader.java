@@ -96,6 +96,9 @@ public class ConfigReader {
                                 break;
 
                         }
+                        //ASK IF WATSON GAMES WANTS CHANGEABLE NAMES FOR JAIL FOR THEMABLE GAMES
+                        //tile.setTileName(tileElement.getElementsByTagName("name").item(0).getTextContent());
+
 
                         tile.setTilePos(i);
                         tileList[i] = tile;
