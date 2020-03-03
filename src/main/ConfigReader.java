@@ -59,7 +59,6 @@ public class ConfigReader {
 
                                     ((Property) tile).addHousePrice(Integer.parseInt(tileElement.getElementsByTagName(house).item(0).getTextContent()));
                                 }
-                                System.out.println("hello");
                                 break;
 
                             case "go":
