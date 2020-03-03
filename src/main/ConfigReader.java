@@ -44,16 +44,11 @@ public class ConfigReader {
 
 
 
+                    String[] elements = {"name", "type", "cost", "one-house", "two-house", "three-house", "four-house", "hotel", "colour"};
+                    for(String ele : elements){
+                        dictionary.put(ele,eElement.getElementsByTagName(ele).item(0).getTextContent());
+                    };
 
-                    dictionary.put("name",eElement.getElementsByTagName("name").item(0).getTextContent());
-                    dictionary.put("type", eElement.getElementsByTagName("type").item(0).getTextContent());
-                    dictionary.put("cost",eElement.getElementsByTagName("cost").item(0).getTextContent());
-                    dictionary.put("one-house",eElement.getElementsByTagName("one-house").item(0).getTextContent());
-                    dictionary.put("two-house",eElement.getElementsByTagName("two-house").item(0).getTextContent());
-                    dictionary.put("three-house",eElement.getElementsByTagName("three-house").item(0).getTextContent());
-                    dictionary.put("four-house",eElement.getElementsByTagName("four-house").item(0).getTextContent());
-                    dictionary.put("hotel",eElement.getElementsByTagName("hotel").item(0).getTextContent());
-                    dictionary.put("colour",eElement.getElementsByTagName("colour").item(0).getTextContent());
 
                     tileList.add(dictionary);
 
