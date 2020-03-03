@@ -43,6 +43,8 @@ public class ConfigReader {
                     Element eElement = (Element) nNode;
 
 
+
+
                     dictionary.put("name",eElement.getElementsByTagName("name").item(0).getTextContent());
                     dictionary.put("type", eElement.getElementsByTagName("type").item(0).getTextContent());
                     dictionary.put("cost",eElement.getElementsByTagName("cost").item(0).getTextContent());
