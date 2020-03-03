@@ -1,3 +1,8 @@
+package main;
+
+import Tiles.Tile;
+import main.ConfigReader;
+
 import java.util.ArrayList;
 import java.util.Map;
 

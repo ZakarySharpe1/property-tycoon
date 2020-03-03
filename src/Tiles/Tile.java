@@ -1,3 +1,6 @@
+package Tiles;
+import main.Player;
+
 import java.util.ArrayList;
 
 public class Tile implements TileInterface {
@@ -37,7 +40,7 @@ public class Tile implements TileInterface {
     }
     /**
      * Adds player to list of players positioned on the tile.
-     * @param player The Player to be added to the list of players on the tile.
+     * @param player The main.Player to be added to the list of players on the tile.
      */
     @Override
     public void addPlayer(Player player) {
@@ -48,7 +51,7 @@ public class Tile implements TileInterface {
 
     /**
      * Removes player from the list of players positioned on the tile.
-     * @param player The Player to remove.
+     * @param player The main.Player to remove.
      */
     @Override
     public void removePlayer(Player player) {
@@ -58,7 +61,7 @@ public class Tile implements TileInterface {
     }
     /**
      * Returns the tile name.
-     * @return Tile name.
+     * @return Tiles.Tile name.
      */
     @Override
     public String getTileName() {
