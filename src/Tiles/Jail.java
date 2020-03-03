@@ -1,4 +1,4 @@
 package Tiles;
 
-public class Jail {
+public class Jail extends Tile {
 }

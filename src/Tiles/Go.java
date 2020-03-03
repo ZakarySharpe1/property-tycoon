@@ -1,4 +1,4 @@
 package Tiles;
 
-public class Go {
+public class Go extends Tile {
 }

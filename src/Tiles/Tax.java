@@ -1,4 +1,4 @@
 package Tiles;
 
-public class Tax {
+public class Tax extends Tile {
 }

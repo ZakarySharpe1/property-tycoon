@@ -1,6 +1,6 @@
 package Tiles;
 
-public class CommunityChest {
+public class CommunityChest extends Tile {
 
 
 

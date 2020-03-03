@@ -1,4 +1,5 @@
 package Tiles;
+
 import main.Player;
 
 import java.util.ArrayList;
@@ -7,11 +8,13 @@ public class Tile implements TileInterface {
 
     private String tileName;
     private int tilePosition;
-    private boolean isBuyable;
-    private ArrayList<Player> tilePlayers;
+    private boolean isBuyable = false;
+    private ArrayList<Player> tilePlayers = new ArrayList<>();
+
 
     /**
      * getBuyable returns true if property is buyable and false if it is not.
+     *
      * @return returns isBuyable , Boolean true or false.
      */
     @Override
@@ -19,8 +22,10 @@ public class Tile implements TileInterface {
         return isBuyable;
 
     }
+
     /**
      * setBuyable sets isBuyable to true or false.
+     *
      * @param TrueOrFalse wether the property is buyable or not (true if yes, else false).
      */
     @Override
@@ -29,8 +34,10 @@ public class Tile implements TileInterface {
         isBuyable = TrueOrFalse;
 
     }
+
     /**
      * Returns the Players on the current tile.
+     *
      * @return List of Players on the tile.
      */
     @Override
@@ -38,8 +45,10 @@ public class Tile implements TileInterface {
 
         return tilePlayers;
     }
+
     /**
      * Adds player to list of players positioned on the tile.
+     *
      * @param player The main.Player to be added to the list of players on the tile.
      */
     @Override
@@ -51,6 +60,7 @@ public class Tile implements TileInterface {
 
     /**
      * Removes player from the list of players positioned on the tile.
+     *
      * @param player The main.Player to remove.
      */
     @Override
@@ -59,8 +69,10 @@ public class Tile implements TileInterface {
         tilePlayers.remove(player);
 
     }
+
     /**
      * Returns the tile name.
+     *
      * @return Tiles.Tile name.
      */
     @Override
@@ -69,8 +81,10 @@ public class Tile implements TileInterface {
         return tileName;
 
     }
+
     /**
      * Sets the tile name.
+     *
      * @param name The desired name of the tile.
      */
     @Override
@@ -79,8 +93,10 @@ public class Tile implements TileInterface {
         tileName = name;
 
     }
+
     /**
      * Returns the position of the tile on the game board.
+     *
      * @return int number of position of tile on the board.
      */
 
@@ -89,8 +105,10 @@ public class Tile implements TileInterface {
 
         return tilePosition;
     }
+
     /**
      * Sets the value of the position of the tile on the game board
+     *
      * @param position The desired position.
      */
     @Override
