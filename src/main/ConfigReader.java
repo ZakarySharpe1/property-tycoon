@@ -34,7 +34,7 @@ public class ConfigReader {
             // NodeList cardNodeList = document.getElementsByTagName("card");
 
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 40; i++) {
 
                 Node aNode = tileNodeList.item(i);
 
@@ -50,13 +50,13 @@ public class ConfigReader {
 
                                 List<String> houses = Arrays.asList("one-house", "two-house", "three-house", "four-house", "hotel");
 
+                                tile.setTileName(tileElement.getElementsByTagName("name").item(0).getTextContent());
                                 tile = new Property();
                                 tile.setBuyable(true);
 
                                 ((Property) tile).setColour(tileElement.getElementsByTagName("colour").item(0).getTextContent());
 
                                 for (String house : houses) {
-
                                     ((Property) tile).addHousePrice(Integer.parseInt(tileElement.getElementsByTagName(house).item(0).getTextContent()));
                                 }
                                 break;
@@ -92,14 +92,12 @@ public class ConfigReader {
 
                                 break;
                             case "potluck":
-
                                 tile = new PotLuck();
                                 break;
 
                         }
-                        tile.setTileName(tileElement.getElementsByTagName("name").item(0).getTextContent());
-                        tile.setTilePos(i);
 
+                        tile.setTilePos(i);
                         tileList[i] = tile;
 
                     } catch (Exception e) {

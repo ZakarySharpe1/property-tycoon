@@ -6,6 +6,7 @@ public class Property extends Tile implements PropertyInterface {
 
 
     private String colour;
+    private int rent;
     private ArrayList<Integer> housePrices = new ArrayList<>();
 
 
