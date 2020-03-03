@@ -410,4 +410,21 @@
         <type>potluck</type>
     </tile>
 
+
+
+    <potluckcard>
+        <action>pay</action>
+        <value>100</value>
+    </potluckcard>
+
+    <potluckcard>
+        <action>eachplayerpays</action>
+        <value>100</value>
+    </potluckcard>
+
+
+
+    deque potluck = [(pay,100),(eachplayerpays,100))]
+
+
 </config>
