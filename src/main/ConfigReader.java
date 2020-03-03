@@ -93,6 +93,7 @@ public class ConfigReader {
                         case "station":
 
                             tile = new Station();
+                            tile.setBuyable(true);
                             break;
                         case "parking":
 
