@@ -8,17 +8,17 @@ import java.util.ArrayList;
 public class GameBoard {
 
     private static Tile[] board;
-    private static ArrayList<Card> potluckcards;
+    private static ArrayList<Card> potluckCards;
 
 
     public static void main(String argv[]) {
 
-        ConfigReader builder = new ConfigReader();
+        ConfigTranslator builder = new ConfigTranslator();
         board = builder.readTiles();
 
-        potluckcards = builder.readCards("potluck");
+        potluckCards = builder.readCards("potluck");
 
-        System.out.println(potluckcards);
+        System.out.println(potluckCards);
 
 
     }
