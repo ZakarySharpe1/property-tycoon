@@ -10,11 +10,12 @@ public class Property extends Tile implements PropertyInterface {
     private ArrayList<Integer> housePrices = new ArrayList<>();
 
 
+    @Override
     public void setColour(String colour) {
         this.colour = colour;
     }
 
-
+    @Override
     public void addHousePrice(int housePrice) {
         housePrices.add(housePrice);
     }

@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
+
+
+<!--GAME TILES-->
+<!--DO NOT EDIT: COLOUR OR TYPE-->
+
 <config>
     <tile>
         <name>prop</name>
@@ -409,5 +414,27 @@
     <tile>
         <type>potluck</type>
     </tile>
+
+
+    <!--POT LUCK CARDS-->
+    <potluckcard>
+        <action>pay</action>
+        <value>100</value>
+    </potluckcard>
+
+    <potluckcard>
+        <action>eachplayerpays</action>
+        <value>100</value>
+    </potluckcard>
+
+
+
+    <!--COMMUNITY CHEST CARDS-->
+    <communitychestcard>
+        <action>jail</action>
+        <value>100</value>
+    </communitychestcard>
+
+
 
 </config>
