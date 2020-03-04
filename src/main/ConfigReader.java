@@ -93,6 +93,7 @@ public class ConfigReader {
                         case "station":
 
                             tile = new Station();
+                            tile.setBuyable(true);
                             break;
                         case "parking":
 
@@ -136,7 +137,6 @@ public class ConfigReader {
         if(potluckorcommunitychest == "potluck"){
             nodes = potLuckCardNodeList;
         }else{
-
             nodes = communityChestCardNodeList;
         }
 
@@ -144,7 +144,6 @@ public class ConfigReader {
         for (int i = 0; i < nodes.getLength(); i++) {
 
             Node aNode = nodes.item(i);
-
 
             if (aNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element cardElement = (Element) aNode;
