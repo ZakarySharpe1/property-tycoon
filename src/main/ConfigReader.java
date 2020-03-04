@@ -21,7 +21,6 @@ public class ConfigReader {
     private NodeList potLuckCardNodeList;
     private NodeList communityChestCardNodeList;
 
-
     public ConfigReader() {
 
         try {
