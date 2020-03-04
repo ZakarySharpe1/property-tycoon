@@ -9,7 +9,14 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.*;
 
-public class ConfigReader {
+
+/**
+ * Translates provided configuration file into game Tile and Card objects for the board.
+ */
+
+
+public class ConfigTranslator {
+
     private Tile[] tileList = new Tile[40];
     private ArrayList<Card> cardList;
 
@@ -22,7 +29,7 @@ public class ConfigReader {
     private NodeList communityChestCardNodeList;
 
 
-    public ConfigReader() {
+    public ConfigTranslator() {
 
         try {
 
@@ -109,6 +116,8 @@ public class ConfigReader {
                             break;
 
                     }
+
+
                     //ASK IF WATSON GAMES WANTS CHANGEABLE NAMES FOR JAIL FOR THEMABLE GAMES
                     //tile.setTileName(tileElement.getElementsByTagName("name").item(0).getTextContent());
 

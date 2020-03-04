@@ -14,7 +14,6 @@ public class Property extends Tile implements PropertyInterface {
         this.colour = colour;
     }
 
-
     public void addHousePrice(int housePrice) {
         housePrices.add(housePrice);
     }
