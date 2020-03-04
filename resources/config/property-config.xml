@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
+
+
+<!--GAME TILES-->
+<!--DO NOT EDIT: COLOUR OR TYPE-->
+
 <config>
     <tile>
         <name>prop</name>
@@ -411,7 +416,7 @@
     </tile>
 
 
-
+    <!--POT LUCK CARDS-->
     <potluckcard>
         <action>pay</action>
         <value>100</value>
@@ -424,7 +429,12 @@
 
 
 
-    deque potluck = [(pay,100),(eachplayerpays,100))]
+    <!--COMMUNITY CHEST CARDS-->
+    <communitychestcard>
+        <action>jail</action>
+        <value>100</value>
+    </communitychestcard>
+
 
 
 </config>
