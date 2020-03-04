@@ -1,4 +1,4 @@
 package Tiles;
 
-public class Station extends Tile {
+public class Station extends Tile implements StationInterface {
 }

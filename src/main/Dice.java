@@ -3,7 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Random;
 
-class Dice {
+class Dice implements DiceInterface {
 
     private ArrayList<Integer> numbers;
     private int counter;
@@ -40,6 +40,7 @@ class Dice {
 //
 //    }
 
+    @Override
     public int rollDice(){
 
         Random r = new Random();

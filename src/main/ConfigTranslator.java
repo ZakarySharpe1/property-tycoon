@@ -15,7 +15,7 @@ import java.util.*;
  */
 
 
-public class ConfigTranslator {
+public class ConfigTranslator implements ConfigTranslatorInterface {
 
     private Tile[] tileList = new Tile[40];
     private ArrayList<Card> cardList;
@@ -51,6 +51,7 @@ public class ConfigTranslator {
     }
 
 
+    @Override
     public Tile[] readTiles() {
 
         for (int i = 0; i < 40; i++) {
@@ -137,6 +138,7 @@ public class ConfigTranslator {
 
     }
 
+    @Override
     public ArrayList<Card> readCards(String potluckorcommunitychest) {
 
         NodeList nodes;
