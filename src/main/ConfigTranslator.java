@@ -29,6 +29,10 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
     private NodeList communityChestCardNodeList;
 
 
+    /**
+     * Initialises instance variables and builds node lists
+     */
+
     public ConfigTranslator() {
 
         try {
@@ -50,7 +54,11 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
         }
     }
 
-
+    /**
+     * Generates a list of set up Tile objects for the game board.
+     *
+     * @return List of preconfigured Tiles generated from config file.
+     */
     @Override
     public Tile[] readTiles() {
 
@@ -137,6 +145,14 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
         return tileList;
 
     }
+
+
+    /**
+     * Generates a list of set up Card objects for the community chest and pot luck.
+     * @param
+     * @return List of preconfigured Cards generated from config file.
+     */
+
 
     @Override
     public ArrayList<Card> readCards(String potluckorcommunitychest) {
