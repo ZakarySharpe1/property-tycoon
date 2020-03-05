@@ -16,8 +16,12 @@ public class ConfigReader {
 
 
 
-    public Tile[] ConfigReader() {
-
+    public Tile[] ConfigReader(){
+/**
+* ConfigReader() will iterate through the property-config.xml file in \resources\config and create a list of tiles
+* representative of the board.
+* @return returns a list of tiles to represent the board
+*/
 
         tileList = new Tile[40];
 
