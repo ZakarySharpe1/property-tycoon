@@ -18,15 +18,11 @@ import java.util.*;
 public class ConfigTranslator implements ConfigTranslatorInterface {
 
     private Tile[] tileList = new Tile[40];
-    private ArrayList<Card> cardList;
+    private ArrayList<ArrayList<Card>> cardDecks;
 
     private DocumentBuilderFactory docBuilderFactory;
     private DocumentBuilder docBuilder;
     private Document document;
-
-    private NodeList tileNodeList;
-    private NodeList potLuckCardNodeList;
-    private NodeList communityChestCardNodeList;
 
 
     /**
@@ -44,9 +40,9 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
             document = docBuilder.parse(file);
             document.getDocumentElement().normalize();
 
-            tileNodeList = document.getElementsByTagName("tile");
-            potLuckCardNodeList = document.getElementsByTagName("potluckcard");
-            communityChestCardNodeList = document.getElementsByTagName("communitychestcard");
+
+            genTiles();
+            genCards();
 
 
         } catch (Exception e) {
@@ -56,11 +52,11 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
 
     /**
      * Generates a list of set up Tile objects for the game board.
-     *
-     * @return List of preconfigured Tiles generated from config file.
      */
     @Override
-    public Tile[] readTiles() {
+    public void genTiles() {
+
+        NodeList tileNodeList = document.getElementsByTagName("tile");
 
         for (int i = 0; i < 40; i++) {
 
@@ -142,57 +138,81 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
 
             }
         }
-        return tileList;
 
     }
 
 
     /**
-     * Generates a list of set up Card objects for the community chest and pot luck.
+     * Generates lists of set up Card objects for the community chest and potluck draws.
+     *
      * @param
-     * @return List of preconfigured Cards generated from config file.
      */
 
 
     @Override
-    public ArrayList<Card> readCards(String potluckorcommunitychest) {
+    public void genCards() {
 
-        NodeList nodes;
-        cardList = new ArrayList<>();
+        ArrayList<NodeList> cardNodeLists = new ArrayList<>();
+        cardDecks = new ArrayList<>();
 
-
-        if(potluckorcommunitychest == "potluck"){
-            nodes = potLuckCardNodeList;
-        }else{
-            nodes = communityChestCardNodeList;
-        }
+        cardNodeLists.add(document.getElementsByTagName("potluckcard"));
+        cardNodeLists.add(document.getElementsByTagName("communitychestcard"));
 
 
-        for (int i = 0; i < nodes.getLength(); i++) {
+        for (NodeList nodes : cardNodeLists) {
 
-            Node aNode = nodes.item(i);
+            ArrayList<Card> cardList = new ArrayList<>();
 
-            if (aNode.getNodeType() == Node.ELEMENT_NODE) {
-                Element cardElement = (Element) aNode;
-
-                Card card = new Card();
+            for (int i = 0; i < nodes.getLength(); i++) {
 
 
-                try {
+                Node aNode = nodes.item(i);
 
-                    card.setValue(Integer.parseInt(cardElement.getElementsByTagName("value").item(0).getTextContent()));
-                    card.setAction(cardElement.getElementsByTagName("action").item(0).getTextContent());
+                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element cardElement = (Element) aNode;
 
-                } catch (Exception e) {
+                    Card card = new Card();
 
-                    System.out.println("error in config file card setup");
+
+                    try {
+
+                        card.setValue(Integer.parseInt(cardElement.getElementsByTagName("value").item(0).getTextContent()));
+                        card.setAction(cardElement.getElementsByTagName("action").item(0).getTextContent());
+                        cardList.add(card);
+
+                    } catch (Exception e) {
+
+                        System.out.println("error in config file card setup");
+
+                    }
+
 
                 }
-                cardList.add(card);
-
             }
+
+            cardDecks.add(cardList);
         }
-        return cardList;
+    }
+
+    public ArrayList<Card> getCommunityChestCards() {
+
+        return cardDecks.get(0);
+
 
     }
+
+    public ArrayList<Card> getPotluckChestCards() {
+
+        return cardDecks.get(0);
+
+
+    }
+
+    public Tile[] getTiles() {
+
+
+        return tileList;
+
+    }
+
 }

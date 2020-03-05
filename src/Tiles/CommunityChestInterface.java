@@ -1,4 +1,4 @@
 package Tiles;
 
-public interface CommunityChestInterface extends TileInterface {
+interface CommunityChestInterface extends TileInterface {
 }

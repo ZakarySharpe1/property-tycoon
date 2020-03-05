@@ -14,12 +14,13 @@ public class GameBoard {
     public static void main(String argv[]) {
 
         ConfigTranslator builder = new ConfigTranslator();
-        board = builder.readTiles();
+        board = builder.getTiles();
 
-        potluckCards = builder.readCards("potluck");
+        potluckCards = builder.getPotluckChestCards();
 
-        System.out.println(potluckCards);
+        System.out.println(potluckCards.get(0).getAction());
 
+        System.out.println(board[32]);
 
     }
 
