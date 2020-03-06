@@ -11,6 +11,11 @@ class Dice implements DiceInterface {
     private int d2;
 
 
+
+
+
+
+
 //    public int rollDice(){
 //
 //        Random random = new Random();

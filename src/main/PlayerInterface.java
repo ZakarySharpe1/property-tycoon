@@ -4,9 +4,24 @@ import java.util.ArrayList;
 
 public interface PlayerInterface {
     ArrayList<Tile> getProperties(); // return properties the player owns
+
+    void addProperty(Property property);
+
     int getMoney(); // return how much money the player has
+    void setMoney(int value);
     Tile getPlayerTile(); // return the tile the player is on
+
+    void setPlayerTile(Tile tile);
+
+    int getPlayerPosition();
+
+    void setPlayerPosition(int position);
+
     boolean getOutOfJailFree(); // return whether the player has GOJF card
     //boolean getIsBankrupt(); // return whether the player is bankrupt
     String getPlayerToken(); // return a string representation of the player's token
+
+    void setPlayerToken(String token);
+
+    void payPlayer(int amount);
 }
