@@ -15,7 +15,7 @@ public class GameController implements GameControllerInterface {
     public static void main(String[] args) {
 
 
-       // board = new GameBoard();
+        // board = new GameBoard();
 
 
     }
@@ -32,7 +32,7 @@ public class GameController implements GameControllerInterface {
 //
 //
 //
-////                };
+//                };
 //
 //
 //
@@ -56,15 +56,10 @@ public class GameController implements GameControllerInterface {
 //    }
 
 
-
-
-
-
     @Override
     public void endGame() {
 
     }
-
 
 
 }
