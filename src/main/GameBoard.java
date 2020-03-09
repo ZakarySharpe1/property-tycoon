@@ -10,47 +10,50 @@ public class GameBoard {
 
     private static Tile[] board;
     private static ArrayList<Card> potluckCards;
+    private static ArrayList<Card> oppourtunityKnocksCards;
     private static Dice dice;
-    private static Player player;
     private static Map<Player, Integer> playerPos;
 
 
 
 
-    public GameBoard(){
-
-        ConfigTranslator builder = new ConfigTranslator();
-        board = builder.getTiles();
-        dice = new Dice();
-        player = new Player();
+    public GameBoard(Player[] players){
 
 
-        potluckCards = builder.getPotluckChestCards();
-
-        System.out.println(potluckCards.get(0).getAction());
-
-        System.out.println(board[32]);
-
-    }
-
-
-    public void testRun(){
-
-        for(int i = 0; i<100; i++) {
-
-
-
-            movePlayer(player,dice.rollDice());
-
-            System.out.println(player.getPlayerPosition());
+        // sets all players position to GO tile at 0
+        for(Player player: players){
+            playerPos.put(player, 0);
         }
 
 
+        ConfigTranslator builder = new ConfigTranslator(); // This ceases to exist after initialization
+
+        board = builder.getTiles();
+        dice = new Dice();
+        potluckCards = builder.getPotluckChestCards();
+        oppourtunityKnocksCards = builder.getCommunityChestCards();
+    }
+
+
+
+    public void playerTurn(Player player){
+
+
+        movePlayer(player, dice.rollDice());
+
+
+
 
     }
 
 
 
+
+
+
+
+
+// need to implement moving backwards condition
     public void movePlayer(Player player, int moves){
 
         int position = player.getPlayerPosition();

@@ -5,19 +5,19 @@ import Tiles.Tile;
 
 import java.util.ArrayList;
 
-public class Player implements PlayerInterface {
+public abstract class Player implements PlayerInterface {
     private ArrayList<Tile> properties;
     private ArrayList<Tile> morgagedProperties;
     private int balance;
-    private Tile position;
-    private int tilePosition;
+//    private Tile position;
+//    private int tilePosition;
     private int getOfJailCards;
     private String gameToken;
 
     public Player(){
         getOfJailCards = 0;
         balance =100;
-        tilePosition = 0;
+//        tilePosition = 0;
 
 
 
@@ -66,44 +66,44 @@ public class Player implements PlayerInterface {
         balance = value;
     }
 
+//
+//    /**
+//     * getPlayerTile will return the object tile that the player is currently standing on
+//     * @return returns position as an tile object
+//     */
+//    @Override
+//    public Tile getPlayerTile(){
+//        return position;
+//    }
+//
+//    /**
+//     * getPlayerTile will return the object tile that the player is currently standing on
+//     * @return returns position as an tile object
+//     */
+//    @Override
+//    public void setPlayerTile(Tile tile){
+//
+//        position = tile;
+//    }
 
-    /**
-     * getPlayerTile will return the object tile that the player is currently standing on
-     * @return returns position as an tile object
-     */
-    @Override
-    public Tile getPlayerTile(){
-        return position;
-    }
-
-    /**
-     * getPlayerTile will return the object tile that the player is currently standing on
-     * @return returns position as an tile object
-     */
-    @Override
-    public void setPlayerTile(Tile tile){
-
-        position = tile;
-    }
-
-    /**
-     * getPlayerTile will return the object tile that the player is currently standing on
-     * @return returns position as an tile object
-     */
-    @Override
-    public int getPlayerPosition(){
-        return tilePosition;
-    }
-
-    /**
-     * getPlayerTile will return the object tile that the player is currently standing on
-     * @return returns position as an tile object
-     */
-    @Override
-    public void setPlayerPosition(int position){
-
-        this.tilePosition = position;
-    }
+//    /**
+//     * getPlayerTile will return the object tile that the player is currently standing on
+//     * @return returns position as an tile object
+//     */
+//    @Override
+//    public int getPlayerPosition(){
+//        return tilePosition;
+//    }
+//
+//    /**
+//     * getPlayerTile will return the object tile that the player is currently standing on
+//     * @return returns position as an tile object
+//     */
+//    @Override
+//    public void setPlayerPosition(int position){
+//
+//        this.tilePosition = position;
+//    }
 
 
     /**

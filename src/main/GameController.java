@@ -9,15 +9,13 @@ public class GameController implements GameControllerInterface {
     private int height;
     private int width;
     private boolean running;
-
     private static GameBoard board;
 
 
     public static void main(String[] args) {
 
 
-        board = new GameBoard();
-        board.testRun();
+       // board = new GameBoard();
 
 
     }
