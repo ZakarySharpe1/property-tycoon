@@ -18,10 +18,6 @@ public abstract class Player implements PlayerInterface {
         getOfJailCards = 0;
         balance = 1500;
 //       tilePosition = 0;
-
-
-
-
 }
 
     /**
