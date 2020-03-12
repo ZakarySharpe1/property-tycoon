@@ -35,15 +35,35 @@ public class GameBoard {
     }
 
 
-
+    // Functional dice setup, logic should be working
+    // Logic behind rolling doubles and when to go to jail setup
+    // Need the process of going to jail to be implemented
     public void playerTurn(Player player){
+        int i = 1;
+        int num = 0;
 
+        while (i < 4){
+            num = dice.rollDice();
+            // If on the third roll, a double is rolled
+            // Player gets sent to jail
+            if((i == 3) && (num > 12)){
+                //Player goes to jail
 
-        movePlayer(player, dice.rollDice());
-
-
-
-
+            }
+            // If a double is rolled, 12 is added to value in rollDice()
+            // Therefore, remove the added 12 and move player
+            // Then roll the dice again
+            else if(num > 12){
+                num = num - 12;
+                movePlayer(player, num);
+                i = i + 1;
+            }
+            // If the two dice are different, move player value of dice combined
+            else{
+                movePlayer(player,num);
+                i = 4;
+            }
+        }
     }
 
 
