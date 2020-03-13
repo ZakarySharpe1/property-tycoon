@@ -25,7 +25,6 @@ public class GameBoard {
             playerPos.put(player, 0);
         }
 
-
         ConfigTranslator builder = new ConfigTranslator(); // This ceases to exist after initialization
 
         board = builder.getTiles();
