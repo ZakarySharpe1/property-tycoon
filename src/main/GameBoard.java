@@ -40,27 +40,23 @@ public class GameBoard {
     // Need the process of going to jail to be implemented
     public void playerTurn(Player player){
         int i = 1;
-        int num = 0;
+        while(i < 4){
+            int d1 = dice.rollDice();
+            int d2 = dice.rollDice();
 
-        while (i < 4){
-            num = dice.rollDice();
-            // If on the third roll, a double is rolled
-            // Player gets sent to jail
-            if((i == 3) && (num > 12)){
-                //Player goes to jail
+            if((i == 3) && (d1 == d2)){
+                //Send player to jail
+            }
+            if(d1 == d2){
+                movePlayer(player,d1+d2);
+                // Do anything on tile landed
 
+                i++;
             }
-            // If a double is rolled, 12 is added to value in rollDice()
-            // Therefore, remove the added 12 and move player
-            // Then roll the dice again
-            else if(num > 12){
-                num = num - 12;
-                movePlayer(player, num);
-                i = i + 1;
-            }
-            // If the two dice are different, move player value of dice combined
             else{
-                movePlayer(player,num);
+                movePlayer(player,d1+d2);
+                // Do anything on tile landed
+
                 i = 4;
             }
         }
