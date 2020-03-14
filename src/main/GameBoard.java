@@ -51,7 +51,7 @@ public class GameBoard {
 
 
 
-
+// THIS NEEDS TO BE REDONE TO WORK WITH THE NEW WAY WE ARE TRACKIN GPLAYERS POSITIONS, IN THE playerPos dictionary
 // need to implement moving backwards condition
     public void movePlayer(Player player, int moves){
 

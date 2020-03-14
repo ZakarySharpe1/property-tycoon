@@ -98,7 +98,7 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
 
                             tile = new Tax();
                             break;
-                        case "communitychest":
+                        case "opportunityknocks":
 
                             tile = new CommunityChest();
                             break;

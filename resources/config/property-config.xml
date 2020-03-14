@@ -6,6 +6,25 @@
 
 <config>
     <tile>
+        <type>go</type>
+        <payout>200</payout>
+    </tile>
+    <tile>
+        <name>Crapper Street</name>
+        <type>property</type>
+        <cost>60</cost>
+        <rent>2</rent>
+        <one-house>10</one-house>
+        <two-house>30</two-house>
+        <three-house>90</three-house>
+        <four-house>160</four-house>
+        <hotel>250</hotel>
+        <colour>brown</colour>
+    </tile>
+    <tile>
+        <type>potluck</type>
+    </tile>
+    <tile>
         <name>prop</name>
         <type>property</type>
         <cost>100</cost>
@@ -16,6 +35,9 @@
         <four-house>100</four-house>
         <hotel>100</hotel>
         <colour>blue</colour>
+    </tile>
+    <tile>
+        <type>tax</type>
     </tile>
     <tile>
         <name>prop</name>
@@ -42,16 +64,7 @@
         <colour>blue</colour>
     </tile>
     <tile>
-        <name>prop</name>
-        <type>property</type>
-        <cost>100</cost>
-        <rent>100</rent>
-        <one-house>100</one-house>
-        <two-house>100</two-house>
-        <three-house>100</three-house>
-        <four-house>100</four-house>
-        <hotel>100</hotel>
-        <colour>blue</colour>
+        <type>opportunityknocks</type>
     </tile>
     <tile>
         <name>prop</name>
@@ -414,7 +427,9 @@
     <tile>
         <type>potluck</type>
     </tile>
-
+    <tile>
+        <type>oppourtunityknocks</type>
+    </tile>
 
     <!--POT LUCK CARDS-->
     <potluckcard>
