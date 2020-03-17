@@ -39,27 +39,7 @@ public class GameBoard {
     // Logic behind rolling doubles and when to go to jail setup
     // Need the process of going to jail to be implemented
     public void playerTurn(Player player){
-        int i = 1;
-        while(i < 4){
-            int d1 = dice.rollDice();
-            int d2 = dice.rollDice();
 
-            if((i == 3) && (d1 == d2)){
-                //Send player to jail
-            }
-            if(d1 == d2){
-                movePlayer(player,d1+d2);
-                // Do anything on tile landed
-
-                i++;
-            }
-            else{
-                movePlayer(player,d1+d2);
-                // Do anything on tile landed
-
-                i = 4;
-            }
-        }
     }
 
 
