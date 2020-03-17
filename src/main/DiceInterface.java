@@ -1,5 +1,8 @@
 package main;
 
 public interface DiceInterface {
-    int rollDice();
+    void reset();
+    boolean rollDice();
+    boolean jailCheck();
+    int getValue();
 }
