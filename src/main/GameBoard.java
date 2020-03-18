@@ -36,6 +36,7 @@ public class GameBoard {
         Collections.shuffle(potluckCards);
         Collections.shuffle(oppourtunityKnocksCards);
 
+
     }
 
 
