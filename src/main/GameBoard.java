@@ -78,7 +78,24 @@ public class GameBoard {
     //check if the player has landed on another players properties etc
     public void checkBoardCircumstances(){}
 
+    //draw card at top of potluck cards pile
+    public Card drawPotLuckCard() {
+        return potluckCards.remove(0) ;
+    }
 
+    //add card to bottom of potluck cards pile
+    public void placePotLuckCard(Card card) {
+        potluckCards.add(potluckCards.size()-1, card);
+    }
 
+    //draw card at top of opportunityKnocks cards pile
+    public Card drawOpportunityKnocksCard() {
+        return oppourtunityKnocksCards.remove(0);
+    }
+
+    //add card to bottom of opportunityKnocks cards pile
+    public void placeOpportunityKnocksCard(Card card) {
+        oppourtunityKnocksCards.add(oppourtunityKnocksCards.size()-1, card);
+    }
 }
 
