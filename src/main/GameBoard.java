@@ -4,6 +4,7 @@ import Tiles.Tile;
 import misc.Card;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 
 public class GameBoard {
@@ -32,6 +33,9 @@ public class GameBoard {
         dice = new Dice();
         potluckCards = builder.getPotluckChestCards();
         oppourtunityKnocksCards = builder.getCommunityChestCards();
+        Collections.shuffle(potluckCards);
+        Collections.shuffle(oppourtunityKnocksCards);
+
     }
 
 
