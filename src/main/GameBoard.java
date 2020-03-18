@@ -10,8 +10,8 @@ import java.util.Map;
 public class GameBoard {
 
     private static Tile[] board;
-    private static ArrayList<Card> potluckCards;
-    private static ArrayList<Card> oppourtunityKnocksCards;
+    private static ArrayList<Card> potLuckCards;
+    private static ArrayList<Card> opportunityKnocksCards;
     private static Dice dice;
     private static Map<Player, Integer> playerPos;
 
@@ -31,10 +31,10 @@ public class GameBoard {
 
         board = builder.getTiles();
         dice = new Dice();
-        potluckCards = builder.getPotluckChestCards();
-        oppourtunityKnocksCards = builder.getCommunityChestCards();
-        Collections.shuffle(potluckCards);
-        Collections.shuffle(oppourtunityKnocksCards);
+        potLuckCards = builder.getPotluckChestCards();
+        opportunityKnocksCards = builder.getCommunityChestCards();
+        Collections.shuffle(potLuckCards);
+        Collections.shuffle(opportunityKnocksCards);
 
 
     }
@@ -80,22 +80,22 @@ public class GameBoard {
 
     //draw card at top of potluck cards pile
     public Card drawPotLuckCard() {
-        return potluckCards.remove(0) ;
+        return potLuckCards.remove(0) ;
     }
 
     //add card to bottom of potluck cards pile
     public void placePotLuckCard(Card card) {
-        potluckCards.add(potluckCards.size()-1, card);
+        potLuckCards.add(potLuckCards.size()-1, card);
     }
 
     //draw card at top of opportunityKnocks cards pile
     public Card drawOpportunityKnocksCard() {
-        return oppourtunityKnocksCards.remove(0);
+        return opportunityKnocksCards.remove(0);
     }
 
     //add card to bottom of opportunityKnocks cards pile
     public void placeOpportunityKnocksCard(Card card) {
-        oppourtunityKnocksCards.add(oppourtunityKnocksCards.size()-1, card);
+        opportunityKnocksCards.add(opportunityKnocksCards.size()-1, card);
     }
 }
 
