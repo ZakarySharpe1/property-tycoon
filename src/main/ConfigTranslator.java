@@ -100,7 +100,7 @@ public class ConfigTranslator implements ConfigTranslatorInterface {
                             break;
                         case "communitychest":
 
-                            tile = new CommunityChest();
+                            tile = new OpportunityKnocksChest();
                             break;
                         case "station":
 
